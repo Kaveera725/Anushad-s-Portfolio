@@ -326,8 +326,9 @@
             <div class="portfolio-box">
                 <div class="portfolio-detail active">
                     <p class="numb">01</p>
-                    <h3>Frontend Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+                    <h3>Frontend Hotel Booking Project</h3>
+                    <p>Allows users to seamlessly discover, book, and manage reservations while providing administrators with
+                         powerful tools to handle properties and availability. (Frontend completed.).</p>
                     <div class=tech>
                         <p>HTML,Tailwind CSS, React</p>
                     </div>
@@ -339,7 +340,7 @@
 
                 <div class="portfolio-detail">
                     <p class="numb">02</p>
-                    <h3>Full Stack Chat Box</h3>
+                    <h3>Full Stack Chat App</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
                     <div class=tech>
                         <p>MongoDB, Express.js, React, Node.js</p>
@@ -385,7 +386,7 @@
                     </div>
                     <div class="live-github">
                         <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>GitHub Repository</span></a>
+                        <a href="#https://github.com/Kaveera725/hotel_booking_new.git"><i class='bx bxl-github'></i><span>GitHub Repository</span></a>
                     </div>
                 </div>
 
@@ -399,7 +400,12 @@
                     <div class="portfolio-carousel">
                         <div class="img-slide">
                             <div class="img-item">
-                                <img src="../photos/portfolio1/1.png">
+                                <img src="../photos/portfolio1/collage.jpg" id="collage-img" style="cursor:pointer;">
+    <!-- Modal for full view image -->
+    <div id="image-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;flex-direction:column;">
+        <button id="close-modal" style="margin-bottom:1.5rem;padding:0.5rem 1.5rem;font-size:2rem;background:#fff;color:#222;border:none;border-radius:2rem;cursor:pointer;box-shadow:0 2px 8px #0003;z-index:10001;transition:background 0.2s;align-self:flex-end;margin-right:5vw;">Close</button>
+        <img id="modal-img" src="../photos/portfolio1/collage.jpg" style="max-width:60vw;max-height:60vh;border-radius:1rem;box-shadow:0 0 2rem #000;z-index:10000;" alt="Collage Full View">
+    </div>
                             </div>
                             <div class="img-item">
                                 <img src="../photos/portfolio1/2.png">
@@ -412,18 +418,6 @@
                             </div>
                             <div class="img-item">
                                 <img src="../photos/portfolio1/5.png">
-                            </div>
-                            <div class="img-item">
-                                <img src="../photos/portfolio1/6.png">
-                            </div>
-                            <div class="img-item">
-                                <img src="../photos/portfolio1/7.png">
-                            </div>
-                            <div class="img-item">
-                                <img src="../photos/portfolio1/8.png">
-                            </div>
-                            <div class="img-item">
-                                <img src="../photos/portfolio1/9.png">
                             </div>
                         </div>
                     </div>
@@ -485,5 +479,29 @@
 
     <!--custom js  -->
     <script src="script.js"></script>
+    <script>
+    // Modal full view for collage image (robust version)
+    (function() {
+        const collageImg = document.getElementById('collage-img');
+        const imageModal = document.getElementById('image-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalImg = document.getElementById('modal-img');
+        if (collageImg && imageModal && closeModal && modalImg) {
+            collageImg.addEventListener('click', function() {
+                // Always show modal, reset display property
+                imageModal.style.display = 'flex';
+                imageModal.focus && imageModal.focus();
+            });
+            closeModal.addEventListener('click', function() {
+                imageModal.style.display = 'none';
+            });
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    imageModal.style.display = 'none';
+                }
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
