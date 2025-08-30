@@ -1,3 +1,34 @@
+// Modal logic for all portfolio images
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.getElementById('close-modal');
+
+    // Select all images in the carousel
+    const carouselImages = document.querySelectorAll('.portfolio-carousel .img-item img');
+
+    carouselImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+            modalImg.src = this.src;
+            modalImg.alt = this.alt || 'Portfolio Full View';
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        modalImg.src = '';
+    });
+
+    // Optional: close modal when clicking outside the image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            modalImg.src = '';
+        }
+    });
+});
 const navLinks = document.querySelectorAll('header nav a');
 const logoLink = document.querySelector('.logo');
 const sections = document.querySelectorAll('section');
@@ -111,3 +142,25 @@ arrowLeft.addEventListener('click', () => {
     activePortfolio();
 });
 
+    // Modal full view for collage image (robust version)
+    (function() {
+        const collageImg = document.getElementById('collage-img');
+        const imageModal = document.getElementById('image-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalImg = document.getElementById('modal-img');
+        if (collageImg && imageModal && closeModal && modalImg) {
+            collageImg.addEventListener('click', function() {
+                // Always show modal, reset display property
+                imageModal.style.display = 'flex';
+                imageModal.focus && imageModal.focus();
+            });
+            closeModal.addEventListener('click', function() {
+                imageModal.style.display = 'none';
+            });
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    imageModal.style.display = 'none';
+                }
+            });
+        }
+    })();
