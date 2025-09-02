@@ -118,7 +118,7 @@
         <div class="resume-container">
             <div class="resume-box">
                 <h2>Why Hire me?</h2>
-                <p class="desc">This is a sample paragraph of text used to demonstrate how content will appear on the page. You can replace it with your own information as needed</p>
+                <p class="desc" style="text-align:left;">I am a dedicated web developer with a solid background in computer science and hands-on experience in modern technologies. I am eager to grow in Networking Engineering and Software Engineering roles, bringing practical project work and certifications in web development, cloud computing, and networking. I am a fast learner, creative problem-solver, and thrive in team environments.</p>
                 <button class="resume-btn active">Experience</button>
                 <button class="resume-btn">Education</button>
                 <button class="resume-btn">Skills</button>
@@ -128,7 +128,7 @@
             <div class="resume-box">
                 <div class="resume-detail experience active">
                     <h2 class="heading">My <span>Experience</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, aperiam exercitationem omnis excepturi expedita atque hic sit quam libero, ducimus vitae animi modi fuga pariatur dolores placeat totam. Minus, quibusdam.</p>
+                    <p class="desc">I have completed several web application and networking environment projects, demonstrating my growing skills in both areas. I am eager to pursue an internship in computer networking or software engineering to further develop my expertise and contribute to real-world projects.</p>
                     <div class="resume-list">
                         <div class="resume-item">
                             <p class="year">2023 - present</p>
@@ -141,7 +141,7 @@
 
                 <div class="resume-detail education">
                     <h2 class="heading">My <span>Education</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, aperiam exercitationem omnis excepturi expedita atque hic sit quam libero, ducimus vitae animi modi fuga pariatur dolores placeat totam. Minus, quibusdam.</p>
+                    <p class="desc" style="text-align:justify; text-justify:inter-word;">My education has provided me with a strong foundation in mathematics, computer science, and technology. I have completed my Ordinary and Advanced Level studies, and I am currently pursuing a degree in Computer Science at the University of Colombo School of Computing. Alongside my university studies, I have earned certifications in web development, cloud computing, networking, and cybersecurity, which have enhanced my technical skills and practical knowledge.</p>
                     <div class="resume-list">
                         <div class="resume-item">
                             <p class="year">2017</p>
@@ -156,7 +156,7 @@
                         </div>
                         <div class="resume-item">
                             <p class="year">2023 - present</p>
-                            <h3>Undergraduate student in Computer Science, University</h3>
+                            <h3>Undergraduate student in Computer Science, University of Colomboi</h3>
                             <p class = "school">I Still studying at the University of Colombo School of Computing.</p>
                         </div>
                         <div class="resume-item">
@@ -429,7 +429,7 @@
         <div class="contact-container">
             <div class="contact-box">
                 <h2>Let's Work Together</h2>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam temporibus facere necessitatibus velit tempore similique labore animi, magnam ex exercitationem enim provident dolorum omnis sequi, non nesciunt maiores, corrupti autem!</p>
+                <p class="desc">These are my contact details:</p>
                 <div class="contact-detail">
                     <i class='bx bxs-phone'></i>
                     <div class="detail">
@@ -454,17 +454,23 @@
             </div>
 
             <div class="contact-box">
-                <form action="">
-                    <h2 class="heading">Contact <span>Me!</span></h2>
-                    <div class="field-box">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Phone Number" required>
-                        <input type="text" placeholder="Email Subject" required>
-                        <textarea name="" id="" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                                <form id="contact-form" action="https://formspree.io/f/xrbaardg" method="POST">
+                                        <h2 class="heading">Contact <span>Me!</span></h2>
+                                        <div class="field-box">
+                                                <input type="text" name="name" placeholder="Full Name" required>
+                                                <input type="email" name="email" placeholder="Your Email" required>
+                                                <input type="text" name="phone" placeholder="Phone Number" required>
+                                                <input type="text" name="subject" placeholder="Email Subject" required>
+                                                <textarea name="message" id="" placeholder="Your Message" required></textarea>
+                                                <!-- Honeypot field for spam protection -->
+                                                <input type="text" name="_gotcha" style="display:none">
+                                        </div>
+                                        <button type="submit" class="btn">Send Message</button>
+                                        <div id="form-status" style="margin-top:1rem;color:green;display:none;">Thank you! Your message has been sent.</div>
+                                </form>
+                                <script>
+
+                                </script>
             </div>
 
             
