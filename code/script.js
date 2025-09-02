@@ -1,4 +1,4 @@
-// Modal logic for all portfolio images
+// Portfolio image modal logic
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Navigation and section switching
 const navLinks = document.querySelectorAll('header nav a');
 const logoLink = document.querySelector('.logo');
 const sections = document.querySelectorAll('section');
@@ -81,6 +82,7 @@ logoLink.addEventListener('click', () => {
     }
 });
 
+// Resume section tab switching
 const resumeBtns = document.querySelectorAll('.resume-btn');
 
 resumeBtns.forEach((btn, idx) => {
@@ -99,6 +101,7 @@ resumeBtns.forEach((btn, idx) => {
     });
 });
 
+// Portfolio carousel navigation
 const arrowRight = document.querySelector('.portfolio-box .navigation .arrow-right');
 const arrowLeft = document.querySelector('.portfolio-box .navigation .arrow-left');
 
@@ -142,7 +145,7 @@ arrowLeft.addEventListener('click', () => {
     activePortfolio();
 });
 
-    // Modal full view for collage image (robust version)
+// Collage image modal logic
     (function() {
         const collageImg = document.getElementById('collage-img');
         const imageModal = document.getElementById('image-modal');
